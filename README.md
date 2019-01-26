@@ -3,15 +3,20 @@ Using packer to create the base image and bash scripts to provision the configs 
 
 ## To Get Started
 - use the `git clone` command to clone the project
-    'git clone https://github.com/JanetJanx/packer-script-base-image.git'
+`git clone https://github.com/JanetJanx/packer-script-base-image.git`
 
-- login to your google console project, create a service account with the required minimum roles, create the      key for the service account and download it as `json`.
+- login to your google console project, create a service account with the required minimum roles,
+create thekey for the service account and download it as `json`.
 
-- Create the json service account file (use a name of your choice) within the clonned project and copy paste the downloaded key.
+- Create the json service account file (use a name of your choice) within the clonned project
+and copy paste the downloaded key.
 
-- Edit the `packerfile.json` file to remove the `account.json` value for the `service_account_json`              variable under the `variables` section and replace it with the name of the created service account file.
+- Edit the `packerfile.json` file to remove the `account.json` value for the
+`service_account_json` variable under the `variables` section and replace it with the name of
+the created service account file.
 
-- Run `packer build packerfile.json` command to build the image. After completion, you should see something      like this below.
+- Run `packer build packerfile.json` command to build the image. After completion, you should
+see something like this below.
     ```
     ==> googlecompute: Deleting instance...
         googlecompute: Instance has been deleted!
@@ -25,7 +30,9 @@ Using packer to create the base image and bash scripts to provision the configs 
     ```
 
 ## Test the base image
-    Create a vm instance on gcp compute engine and use the created image which you will find under the custom images. ssh the vm and check whether the service is running using `sudo service css_clock status` command to see something like this below
+Create a vm instance on gcp compute engine and use the created image which you will find under the
+custom images. ssh the vm and check whether the service is running using `sudo service css_clock status`
+command to see something like this below
 
     ```
     username@testing:~$ sudo service css_clock status
